@@ -4,6 +4,8 @@
   "private": true,
   "nx": {
     "name": "auth-service",
+    "projectType": "application",
+    "sourceRoot": "auth-service/src",
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",
@@ -21,7 +23,12 @@
           "main": "apps/auth-service/src/main.ts",
           "tsConfig": "apps/auth-service/tsconfig.app.json",
           "assets": [
-            "apps/auth-service/src/assets"
+            "apps/auth-service/src/assets",
+            {
+              "input": "apps/auth-service/src",
+              "glob": "swagger-output.json",
+              "output": "apps/auth-service/src"
+            }
           ],
           "esbuildOptions": {
             "sourcemap": true,
