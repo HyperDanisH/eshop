@@ -34,8 +34,8 @@ app.use(errorMiddleware);
 const port = process.env.PORT || 6001;
 const server =app.listen(port, () => {
     console.log(`Auth service is running at http://localhost:${port}/api`);
-    console.log(`Swagger Docs available at https://localhost:${port}/docs-json`);
-})
+    console.log(`Swagger Docs available at http://localhost:${port}/docs-json`);
+});
 
 server.on("error", (err) => {
     console.log("Server Error: ", err);
